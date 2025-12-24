@@ -1,0 +1,38 @@
+Copy Assignment Operator
+
+Definition:
+The copy assignment operator is used to assign values from one existing object to another existing object.
+
+ClassName& operator=(const ClassName &obj);
+
+Returns *this to allow chained assignment (a = b = c;)
+
+Default copy assignment does shallow copy.
+
+#include <iostream>
+using namespace std;
+
+class MyClass {
+public:
+    int x;
+    MyClass(int val = 0) : x(val) {}
+
+    // Copy assignment operator
+    MyClass& operator=(const MyClass &obj) {
+        x = obj.x;
+        cout << "Copy assignment called\n";
+        return *this;
+    }
+};
+
+int main() {
+    MyClass a(5);
+    MyClass b;
+    b = a; // Copy assignment called
+    cout << b.x << endl; // 5
+}
+
+✅ Used when:
+
+You assign one existing object to another.
+
