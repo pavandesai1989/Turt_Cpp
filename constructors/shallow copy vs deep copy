@@ -1,6 +1,12 @@
 Shallow Copy vs Deep Copy
 Shallow Copy
 
+you can add print memory address method to show tht both point to same location without explicit copy con
+void printaddr()
+{
+    cout<<"add is "<<m_ptr<<endl;
+}
+
 Copies all member values as-is.
 
 If the object has pointer members, only the pointer value is copied → both objects point to the same memory.
