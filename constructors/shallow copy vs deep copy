@@ -1,0 +1,178 @@
+Shallow Copy vs Deep Copy
+Shallow Copy
+
+Copies all member values as-is.
+
+If the object has pointer members, only the pointer value is copied → both objects point to the same memory.
+
+Danger: Modifying one object affects the other, and deleting memory can cause double-free errors.
+
+#include <iostream>
+using namespace std;
+
+class MyClass {
+public:
+    int* ptr;
+    MyClass(int val) { ptr = new int(val); }
+
+    // Default copy constructor → shallow copy
+};
+
+int main() {
+    MyClass a(10);
+    MyClass b = a; // shallow copy
+    *b.ptr = 20;
+    cout << *a.ptr << endl; // 20! a is affected
+}
+
+Deep Copy
+
+Allocates new memory and copies actual content, not just pointer.
+
+Each object has its own copy of the data.
+
+#include <iostream>
+using namespace std;
+
+class MyClass {
+public:
+    int* ptr;
+    MyClass(int val) { ptr = new int(val); }
+
+    // Deep copy constructor
+    MyClass(const MyClass &obj) {
+        ptr = new int(*obj.ptr); // allocate new memory
+    }
+
+    ~MyClass() { delete ptr; }
+};
+
+int main() {
+    MyClass a(10);
+    MyClass b = a; // deep copy
+    *b.ptr = 20;
+    cout << *a.ptr << endl; // 10, a unaffected
+}
+
+✅ Rule of 3 (if you implement any of these, you must implement all):
+
+Copy constructor
+
+Copy assignment operator
+
+Destructor
+
+This ensures proper memory management.
+
+| Feature          | Copy Constructor               | Copy Assignment Operator                  |
+| ---------------- | ------------------------------ | ----------------------------------------- |
+| When used        | Object initialization          | Object assignment                         |
+| Syntax           | `ClassName(const ClassName &)` | `ClassName& operator=(const ClassName &)` |
+| Default behavior | Shallow copy                   | Shallow copy                              |
+| Returns          | N/A                            | Reference to current object (`*this`)     |
+
+Let’s put everything together in one complete C++ example. It demonstrates:
+
+Copy constructor
+
+Copy assignment operator
+
+Shallow copy vs Deep copy
+
+Proper memory management
+#include <iostream>
+using namespace std;
+
+class MyClass {
+public:
+    int* data;
+
+    // Constructor
+    MyClass(int val) {
+        data = new int(val);
+        cout << "Constructor called for " << *data << endl;
+    }
+
+    // ----- Copy Constructor (Deep Copy) -----
+    MyClass(const MyClass &obj) {
+        data = new int(*obj.data); // allocate new memory
+        cout << "Copy constructor called for " << *data << endl;
+    }
+
+    // ----- Copy Assignment Operator (Deep Copy) -----
+    MyClass& operator=(const MyClass &obj) {
+        if (this == &obj) // self-assignment check
+            return *this;
+
+        delete data; // free old memory
+        data = new int(*obj.data); // allocate new memory and copy
+        cout << "Copy assignment called for " << *data << endl;
+        return *this;
+    }
+
+    // Destructor
+    ~MyClass() {
+        cout << "Destructor called for " << *data << endl;
+        delete data;
+    }
+};
+
+int main() {
+    cout << "--- Creating object a ---\n";
+    MyClass a(10); // Constructor
+
+    cout << "\n--- Creating object b using copy constructor ---\n";
+    MyClass b = a; // Copy constructor
+
+    cout << "\n--- Modifying b.data ---\n";
+    *b.data = 20;
+    cout << "a.data = " << *a.data << endl; // 10 (deep copy)
+    cout << "b.data = " << *b.data << endl; // 20
+
+    cout << "\n--- Creating object c ---\n";
+    MyClass c(30); // Constructor
+
+    cout << "\n--- Assigning a to c using copy assignment ---\n";
+    c = a; // Copy assignment
+
+    cout << "\n--- Modifying c.data ---\n";
+    *c.data = 40;
+    cout << "a.data = " << *a.data << endl; // 10 (deep copy)
+    cout << "c.data = " << *c.data << endl; // 40
+
+    return 0;
+}
+
+--- Creating object a ---
+Constructor called for 10
+
+--- Creating object b using copy constructor ---
+Copy constructor called for 10
+
+--- Modifying b.data ---
+a.data = 10
+b.data = 20
+
+--- Creating object c ---
+Constructor called for 30
+
+--- Assigning a to c using copy assignment ---
+Copy assignment called for 10
+
+--- Modifying c.data ---
+a.data = 10
+c.data = 40
+
+Destructor called for 40
+Destructor called for 20
+Destructor called for 10
+
+Key Points:
+
+b is created using copy constructor, deep copy ensures a and b are independent.
+
+c existed already; assignment c = a uses copy assignment operator.
+
+Modifying b or c does not affect a → deep copy works.
+
+Destructor frees allocated memory, preventing memory leaks.
