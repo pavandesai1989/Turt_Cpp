@@ -1,0 +1,108 @@
+MyClass a;
+MyClass b;
+b = MyClass(10);
+
+Question: Which functions are called here?
+
+A) Only copy constructor
+B) Only copy assignment operator
+C) Copy constructor then copy assignment operator
+D) Default constructor only
+
+Answer: C) Copy constructor then copy assignment operator ✅
+
+Explanation:
+
+MyClass(10) creates a temporary object → copy constructor may be called (or move constructor in modern C++).
+
+Then, this temporary is assigned to b → copy assignment operator is called.
+
+MyClass a;
+MyClass b(a);
+
+Question: Which function is called?
+
+A) Default constructor
+B) Copy constructor
+C) Copy assignment operator
+D) Destructor
+
+Answer: B) Copy constructor ✅
+
+Explanation:
+
+Object b is being created and initialized from a.
+
+
+MyClass foo() {
+    MyClass temp;
+    return temp;
+}
+
+int main() {
+    MyClass obj = foo();
+}
+
+Question: Which function is called to initialize obj?
+
+A) Default constructor
+B) Copy constructor
+C) Copy assignment operator
+D) Depends on compiler optimizations
+
+Answer: D) Depends on compiler optimizations (NRVO / RVO) ✅
+
+Explanation:
+
+Normally, copy constructor is called when returning by value.
+
+Modern compilers often apply Return Value Optimization (RVO) → may skip the copy.
+
+
+int main() {
+    MyClass a;
+    MyClass b;
+    b = a;
+}
+
+Question: Which function is called when b = a; executes?
+
+A) Default constructor
+B) Copy constructor
+C) Copy assignment operator
+D) Destructor
+
+Answer: C) Copy assignment operator ✅
+
+Explanation:
+
+b already exists, so this is assignment, not initialization.
+
+class MyClass {
+public:
+    MyClass() {}
+    MyClass(const MyClass& obj) { /* copy constructor */ }
+    MyClass& operator=(const MyClass& obj) { /* copy assignment */ return *this; }
+};
+
+int main() {
+    MyClass a;
+    MyClass b = a;
+}
+
+Question: Which function is called to initialize b?
+
+A) Default constructor
+B) Copy constructor
+C) Copy assignment operator
+D) Destructor
+
+Answer: B) Copy constructor ✅
+
+Explanation:
+
+b is being initialized at the time of creation.
+
+Copy assignment is used only after an object already exists.
+
+
