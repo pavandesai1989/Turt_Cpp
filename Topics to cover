@@ -1,0 +1,161 @@
+## 🔥 C++ Interview Roadmap (Most Asked → Least)
+
+### 1️⃣ STL (MOST IMPORTANT – asked everywhere)
+
+* vector
+
+  * dynamic resizing, capacity vs size
+  * push_back vs emplace_back
+  * memory layout (contiguous)
+* unordered_map / map
+
+  * hashing vs RB tree
+  * collisions, load factor
+  * O(1) vs O(log N)
+* set / unordered_set
+* stack, queue, priority_queue (heap)
+* deque, list (when & why)
+* Algorithms
+
+  * sort, binary_search
+  * lower_bound / upper_bound
+* Custom comparator (VERY IMPORTANT)
+
+---
+
+### 2️⃣ OOPs (CORE INTERVIEW AREA)
+
+* Class, object, access specifiers
+* Encapsulation, Abstraction
+* Inheritance:
+
+  * types (single, multiple, multilevel)
+  * diamond problem
+* Polymorphism:
+
+  * compile-time (overloading)
+  * runtime (virtual functions)
+* Virtual function & vtable (VERY IMPORTANT)
+* Constructor / Destructor order
+* Object slicing
+
+---
+
+### 3️⃣ Memory Management (VERY VERY IMPORTANT)
+
+* Stack vs Heap
+* new/delete vs malloc/free
+* Memory leak, dangling pointer
+* Shallow vs Deep copy
+* Rule of 3 / 5
+* Copy constructor & assignment operator
+* Placement new (basic idea)
+
+---
+
+### 4️⃣ Smart Pointers (HIGHLY ASKED)
+
+* unique_ptr → exclusive ownership
+* shared_ptr → reference counting
+* weak_ptr → avoid cycles
+* Circular dependency problem
+* When to use what
+
+---
+
+### 5️⃣ Multithreading (IMPORTANT)
+
+* thread creation
+* mutex, lock_guard, unique_lock
+* race condition
+* deadlock
+* condition_variable
+* atomic operations
+
+---
+
+### 6️⃣ Modern C++ (C++11/14/17)
+
+* auto, decltype
+* range-based loops
+* lambda functions
+* move semantics (rvalue, std::move)
+* perfect forwarding (basic idea)
+* nullptr
+
+---
+
+### 7️⃣ Templates
+
+* Function templates
+* Class templates
+* Template specialization
+* Variadic templates (basic)
+
+---
+
+### 8️⃣ Exception Handling
+
+* try, catch, throw
+* stack unwinding
+* RAII concept
+
+---
+
+### 9️⃣ Internal Working (DIFFERENTIATOR)
+
+* How vector grows
+* How unordered_map works internally
+* map → Red-Black Tree
+* vtable internals
+* memory layout of object
+
+---
+
+## 📅 Study Plan
+
+### Week 1
+
+* STL (vector, map, set, heap)
+* Practice STL-based questions
+
+### Week 2
+
+* OOPs (deep understanding)
+* Memory Management
+
+### Week 3
+
+* Smart Pointers
+* Modern C++ (lambda, move semantics)
+
+### Week 4
+
+* Multithreading
+* Templates + Exception Handling
+
+### Week 5 (Revision + Advanced)
+
+* Internal working
+* Mock interviews
+* Revise weak topics
+
+---
+
+## ⚡ How to Study
+
+* Understand concept
+* Write small code examples
+* Prepare interview answers (theory + code)
+
+---
+
+## 🎯 Must Focus (if short on time)
+
+* STL + OOP + Memory + Smart Pointers
+
+---
+
+## 🧠 One-liner
+
+Master STL + OOP + Memory → you clear most C++ interviews.
