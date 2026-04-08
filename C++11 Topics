@@ -1,0 +1,206 @@
+## 🔥 C++11 Topics (Most Asked → Least)
+
+### 1️⃣ Move Semantics (VERY VERY IMPORTANT)
+
+* rvalue vs lvalue
+* rvalue references (&&)
+* std::move
+* Move constructor & move assignment
+* Why needed (avoid deep copy, improve performance)
+
+---
+
+### 2️⃣ Smart Pointers (VERY IMPORTANT)
+
+* unique_ptr
+* shared_ptr (reference counting)
+* weak_ptr (avoid cycles)
+* Ownership semantics
+
+---
+
+### 3️⃣ Lambda Functions (VERY COMMON)
+
+* Syntax: [capture](params){}
+* Capture by value / reference
+* Use in STL (sort, for_each)
+* Mutable lambdas
+
+---
+
+### 4️⃣ Auto Keyword
+
+* Type deduction
+* Use with iterators, STL
+* Limitations
+
+---
+
+### 5️⃣ nullptr (IMPORTANT)
+
+* Replaces NULL
+* Type-safe
+* Avoids ambiguity in function overloading
+
+---
+
+### 6️⃣ Range-Based For Loop
+
+* Cleaner iteration over containers
+* By value vs reference
+
+---
+
+### 7️⃣ Thread Support (IMPORTANT)
+
+* std::thread
+* mutex, lock_guard
+* basic concurrency
+
+---
+
+### 8️⃣ Unordered Containers
+
+* unordered_map, unordered_set
+* Hashing concept
+* Average O(1)
+
+---
+
+### 9️⃣ Delegating Constructors
+
+* One constructor calling another
+
+---
+
+### 🔟 Defaulted & Deleted Functions
+
+* = default
+* = delete
+* Control object creation
+
+---
+
+### 1️⃣1️⃣ constexpr (Basic)
+
+* Compile-time evaluation
+* Simple functions
+
+---
+
+### 1️⃣2️⃣ static_assert
+
+* Compile-time checks
+
+---
+
+## 🎯 Must Focus (if short on time)
+
+* Move semantics + Smart pointers + Lambda
+
+---
+
+## 🧠 One-liner
+
+Move semantics + smart pointers = heart of C++11
+
+---
+
+## 🎯 Top Interview Questions (C++11 Topic-wise)
+
+### Move Semantics
+
+* What is rvalue and lvalue?
+* What is rvalue reference (&&)?
+* What is std::move? Does it actually move?
+* Difference between copy and move constructor?
+* When is move constructor called?
+
+---
+
+### Smart Pointers
+
+* Difference between unique_ptr and shared_ptr?
+* How shared_ptr works internally?
+* What is weak_ptr and why needed?
+* What is circular dependency problem?
+* When should you use smart pointers?
+
+---
+
+### Lambda Functions
+
+* What is lambda function syntax?
+* What are capture modes?
+* Difference between capture by value and reference?
+* What is mutable lambda?
+* Where are lambdas used in STL?
+
+---
+
+### Auto Keyword
+
+* How does auto deduce type?
+* Difference between auto and decltype?
+* When should you avoid auto?
+
+---
+
+### nullptr
+
+* Difference between NULL and nullptr?
+* Why is nullptr type-safe?
+* Example where NULL causes ambiguity?
+
+---
+
+### Range-Based For Loop
+
+* Difference between by value and by reference iteration?
+* When to use auto& vs auto?
+
+---
+
+### Thread Support
+
+* How to create thread in C++11?
+* What is mutex and why needed?
+* What is race condition?
+* What is deadlock?
+
+---
+
+### Unordered Containers
+
+* How unordered_map works internally?
+* What is hashing and collision?
+* Worst case complexity of unordered_map?
+
+---
+
+### Delegating Constructors
+
+* What are delegating constructors?
+* Why use them?
+
+---
+
+### Defaulted & Deleted Functions
+
+* What is =default?
+* What is =delete?
+* Why delete copy constructor?
+
+---
+
+### constexpr
+
+* What is constexpr?
+* Difference between const and constexpr?
+
+---
+
+### static_assert
+
+* What is static_assert?
+* When is it evaluated?
