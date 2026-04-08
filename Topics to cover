@@ -159,3 +159,100 @@
 ## 🧠 One-liner
 
 Master STL + OOP + Memory → you clear most C++ interviews.
+
+---
+
+## 🎯 Top Interview Questions (Topic-wise)
+
+### STL
+
+* Difference between vector and list?
+* vector vs deque?
+* map vs unordered_map?
+* How unordered_map works internally?
+* What happens when vector resizes?
+* Difference between push_back and emplace_back?
+* How priority_queue works?
+* Write custom comparator for sorting pairs
+
+---
+
+### OOPs
+
+* What is polymorphism? Types?
+* Virtual function vs pure virtual?
+* What is vtable?
+* Constructor vs Destructor order in inheritance?
+* What is object slicing?
+* Diamond problem? How to solve?
+* Can virtual function be static?
+
+---
+
+### Memory Management
+
+* Stack vs Heap?
+* new/delete vs malloc/free?
+* What is memory leak?
+* Dangling pointer?
+* Shallow vs Deep copy?
+* Rule of 3 / 5?
+* When is copy constructor called?
+
+---
+
+### Smart Pointers
+
+* unique_ptr vs shared_ptr?
+* How shared_ptr works internally?
+* What is weak_ptr?
+* Circular dependency problem?
+* When to use smart pointers?
+
+---
+
+### Multithreading
+
+* What is race condition?
+* What is mutex?
+* Difference between lock_guard and unique_lock?
+* What is deadlock?
+* How to avoid deadlock?
+* What is condition_variable?
+
+---
+
+### Modern C++
+
+* What is auto and decltype?
+* What are lambda functions?
+* What is move semantics?
+* lvalue vs rvalue?
+* What is std::move?
+
+---
+
+### Templates
+
+* What are templates?
+* Function vs class templates?
+* What is template specialization?
+* What are variadic templates?
+
+---
+
+### Exception Handling
+
+* How exception handling works in C++?
+* What is stack unwinding?
+* What is RAII?
+
+---
+
+### Internal Working
+
+* How vector grows internally?
+* How map is implemented?
+* How unordered_map handles collisions?
+* What is vtable and how it works?
+* Memory layout of class object?
